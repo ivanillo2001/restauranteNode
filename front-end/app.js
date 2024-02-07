@@ -124,17 +124,17 @@ function mostrarMesas(restaurante, fechaReserva) {
     let mesasTotal = $("#rest option:selected").attr("num-mesas");
     console.log(mesasTotal);
     for (let numeroMesa = 1; numeroMesa <= mesasTotal; numeroMesa++) {
-      // Verificar si hay una reserva para la mesa actual
+      // Verifico si hay una reserva para la mesa actual
       let reservaParaMesa = $(responseText).filter(
         (ind, reserva) => reserva.mesa == numeroMesa
       )[0];
       if (reservaParaMesa) {
-        // Si hay una reserva, añadir mesa ocupada
+        // Si hay una reserva, añado mesa ocupada
         $("#comedor").append(
           `<div><div id=${numeroMesa} class='mesaOcupada' title='Mesa ${numeroMesa} - Cliente: ${reservaParaMesa.nomapecli}'></div></div>`
         );
       } else {
-        // Si no hay reserva, añadir mesa libre
+        // Si no hay reserva, añado mesa libre
         $("#comedor").append(
           `<div><div id=${numeroMesa} class='mesaLibre' title='Mesa ${numeroMesa}'></div></div>`
         );
@@ -145,6 +145,9 @@ function mostrarMesas(restaurante, fechaReserva) {
   });
 }
 
+/**
+ * @description Función encargada de darle funcionalidad a las mesas
+ */
 function accionesMesas() {
   //ocupamos mesa
   let mesasLibres = document.querySelectorAll(".mesaLibre");
