@@ -1,0 +1,23 @@
+.error{
+    color: red;
+}
+#comedor{
+    display: inline-flex;
+    flex-wrap: wrap;
+}
+.mesaLibre{
+    width: 55px;
+    height: 55px;
+    margin: 25px;
+    background-image: url(../imagenes/mesaLibre.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.mesaOcupada{
+    width: 55px;
+    height: 55px;
+    margin: 25px;
+    background-image: url(../imagenes/mesaOcupada.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+}

@@ -1,0 +1,118 @@
+﻿<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>Restaurante Cadena Trassierra</title>
+    <link rel="stylesheet" href="../assets/css/fontawesome-all.min.css">
+    <link rel="stylesheet" href="../assets/librerias/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../assets/librerias/sweetalert2.min.css">
+    <link rel="stylesheet" href="../assets/librerias/jquery-ui/jquery-ui.min.css">
+    <link rel="stylesheet" href="../assets/librerias/fontawesome-free-6.4.2-web/css/all.min.css">
+    <link rel="stylesheet" href="../assets/librerias/jquery-validation/dist/localization/">
+    <link rel="stylesheet" href="../assets/librerias/DataTables/datatables.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="row col-md-8 text-center">
+             
+                    <form class="form-datos" autocomplete="off">
+                        <fieldset>
+                            <legend class="text-center header">RESTAURANTES TRASSIERRA</legend>
+                            <div class="input-group-text mb-4">
+                                <span class="input-group-text"><i class="fa-solid fa-utensils"></i></span>
+                               
+                                <select id="rest" name="rest" class="form-control">
+                                    <option value="">Seleccione un restaurante</option>
+                                </select>
+                              </div>
+                              <div class="input-group-text mb-4">
+                                <span class="input-group-text"><i class="fa-solid fa-users"></i></span>
+                                <select id="emp" name="emp" class="form-control">
+                                    <option value="">Seleccione un empleado</option>
+                                </select>
+                              </div>
+
+                              <div class="input-group-text mb-4">
+                                <span class="input-group-text"><i class="fa-solid fa-calendar-check"></i></span>
+                                <input id="fechaR" name="fechaR" type="date" placeholder="Fecha de Reserva" class="form-control">
+                                
+                              </div>
+                                                      
+
+                            <div class="row form-group justify-content-center">
+                                <div class="col-md-4 ">
+                                    <button class="boton btn btn-primary btn-lg">Mostrar comedor</button>
+
+                                </div>
+                            </div>
+                        </fieldset>
+                    </form>
+        </div>
+        <hr>
+        <div>
+
+            <div class="well well-sm">
+                <div class="form-group justify-content-center">
+                    <legend class="text-center header">COMEDOR</legend>
+                    <div class="col-md-12 text-center" id="comedor">
+                       
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="modal fade" id="frmModal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="frmModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="frmModalLabel"></h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form class="frmReservas" autocomplete="off">
+                        <div class="input-group-text mb-4">
+                            <span class="input-group-text"><i class="fa-regular fa-user"></i></span>
+                            <input type="text" class="form-control" name="nameApeCli" id="nameApeCli" placeholder="Introduzca nombre y apellidos del cliente">
+                            
+                          </div>
+                          <div class="input-group-text mb-4">
+                            <span class="input-group-text"><i class="fa-brands fa-cc-diners-club"></i></span>
+                            <input type="number" class="form-control" id="numCom" name="numCom" placeholder="Introduzca número de comensales">
+                          </div>
+                           
+                          <button class="subtn-mit btn bprimary" style="width:100%">Reservar</button>
+                        
+                    </form>
+                  
+                </div>
+                
+              </div>
+            </div>
+        </div>
+
+            
+        
+    </div>
+
+
+
+    <!-- librerias -->
+    <script src="../assets/librerias/jquery-3.7.1.min.js"></script>
+    <script src="../assets/librerias/jquery-validation/dist/jquery.validate.min.js"></script>
+   <script src="../assets/librerias/jquery-ui/jquery-ui.min.js"></script>
+   <script src="../assets/librerias/DataTables/datatables.min.js"></script>
+   <script src="../assets/librerias/sweetalert2.all.min.js"></script>
+   <script src="../assets/librerias/fontawesome-free-6.4.2-web/js/fontawesome.min.js"></script>
+   <script src="../assets/librerias/bootstrap/js/bootstrap.min.js"></script>
+   <script src="../assets/librerias/crearXMLHTTP.js"></script>
+   <script src="../assets/librerias/axios/axios.min.js"></script>
+    <script src="./app.js"></script>
+
+
+</body>
+
+</html>
