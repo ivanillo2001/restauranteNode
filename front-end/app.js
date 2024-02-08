@@ -1,5 +1,4 @@
 "use strict";
-
 //variables globales
 let idRestaurante;
 let fechaReserva;
@@ -30,7 +29,7 @@ function mostrarRestaurantes() {
         );
       });
       /**
-       * Ahora añadimos el metodo on Change, que llama a la funcion mostrarEmpleados
+       * Ahora añadimos el metodo on Change, que llama a la funcion cargarEmpleados
        */
       $("#rest").on("change", function () {
         //llamamos a la funcion de mostrarEmpleados
