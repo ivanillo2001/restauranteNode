@@ -34,7 +34,7 @@ function mostrarRestaurantes() {
       $("#rest").on("change", function () {
         //llamamos a la funcion de mostrarEmpleados
         cargarEmpleados($("#rest").val()); //con esto obtenemos el valor del restaurante seleccionado
-        
+        $("#comedor").empty() //borramos comedor al cambiar de restaurante
       });
     })
     .catch((err) => {
