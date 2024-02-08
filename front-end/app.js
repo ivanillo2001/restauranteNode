@@ -119,10 +119,8 @@ function mostrarMesas(restaurante, fechaReserva) {
     type: "GET",
     url: `http://localhost:3000/mesas/${idRestaurante}/${fechaReserva}`,
   }).done(function (responseText) {
-    console.log(responseText); //prueba para ver las reservas que obtenemos
     //ahora mostramos las mesas que tiene el restaurante que hemos puesto según el formulario
     let mesasTotal = $("#rest option:selected").attr("num-mesas");
-    console.log(mesasTotal);
     for (let numeroMesa = 1; numeroMesa <= mesasTotal; numeroMesa++) {
       // Verifico si hay una reserva para la mesa actual
       let reservaParaMesa = $(responseText).filter(
@@ -159,7 +157,6 @@ function accionesMesas() {
   });
 
   //eliminar reserva:
-
   let mesasOcupadas = document.querySelectorAll(".mesaOcupada");
   mesasOcupadas.forEach((mesaOcupada) => {
     mesaOcupada.addEventListener("click", function () {
@@ -187,8 +184,6 @@ function hacerReserva(numMesa, fecha, idRestaurante) {
     //recogemos datos del formulario
     let nomCliente = $("#nameApeCli").val();
     let numComensales = $("#numCom").val();
-    console.log(nomCliente);
-    console.log(numComensales);
     confirmarReserva(
       numMesa,
       fecha,
@@ -228,10 +223,7 @@ function confirmarReserva(
   nomCliente,
   numComensales
 ) {
-  //Ahora codificaremos el código para guardar nuestra  reserva:
-  //primero almacenamos los parametros en el param:
-  console.log(nomCliente);
-  console.log(numComensales);
+  //Codificaremos el código para guardar nuestra  reserva:
   const datos = {
     idRestaurante: idRestaurante,
     idEmpleado: idEmpleado,
@@ -276,15 +268,14 @@ function borrarReserva(numMesa, idRestaurante, fechaReserva) {
     confirmButtonText: "Sí, cancelar",
     denyButtonText: `No`,
   }).then((result) => {
-    /* Read more about isConfirmed, isDenied below */
     if (result.isConfirmed) {
-      //preparamos los parametros:
+      //preparamos los datos para la consulta:
       const datos = {
         numMesa: numMesa,
         idRestaurante: idRestaurante,
         fecha: fechaReserva,
       };
-
+      //hacemos el fetch
       fetch("http://localhost:3000/borrarReserva", {
         headers: {
           "Content-Type": "application/json",
